@@ -11,6 +11,12 @@ Other Contributors: ()
 
 > Abstract: 
 
+### Installation
+
+An `environment.txt` file is provided from which you can generate an `rce_bump` environment with the command `conda create --name rce_bump --file environment.txt`. 
+
+To add this environment to you `jupyter lab` instance, you must first activate this environment and then run `ipython kernel install --user --name=rce_bump`.
+
 
 ### Acknowledgements:
 
