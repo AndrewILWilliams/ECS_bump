@@ -11,6 +11,13 @@ Other Contributors: ()
 
 > Abstract: 
 
+### To-do
+
+ - [ ] Go through a couple of the `climlab` tutorials and get a simple RCE model going. 
+ - [ ] Iterate through various surface temperatures and calculate the ECS for each one.
+ 
+ - [ ] Use RRTMG for a simple spectral decomposition of the OLR changes. Do we see the `H20 windows` and `C02 radiator fins`??
+
 ### Installation
 
 An `environment.txt` file is provided from which you can generate an `rce_bump` environment with the command `conda create --name rce_bump --file environment.txt`. 
