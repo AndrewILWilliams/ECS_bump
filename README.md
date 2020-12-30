@@ -6,7 +6,7 @@ Created/Mantained By: Andrew Williams (andrew.williams@physics.ox.ac.uk)
 Other Contributors: ()
 
 <p align="center">
-  <img src="Example_rrtmg_fig.png" width="700" />
+  <img src="Example_rrtmg_fig.png" width="900" />
 </p>
 
 > Abstract: 
