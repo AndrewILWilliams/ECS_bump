@@ -6,7 +6,7 @@ Created/Mantained By: Andrew Williams (andrew.williams@physics.ox.ac.uk)
 Other Contributors: ()
 
 <p align="center">
-  <img src="seeley_jeevanjee_2020.png" width="500" />
+  <img src="Example_rrtmg_fig.png" width="500" />
 </p>
 
 > Abstract: 
