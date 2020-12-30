@@ -13,8 +13,9 @@ Other Contributors: ()
 
 ### To-do
 
- - [ ] Go through a couple of the `climlab` tutorials and get a simple RCE model going. 
- - [ ] Iterate through various surface temperatures and calculate the ECS for each one.
+ - [x] Go through a couple of the `climlab` tutorials and get a simple RCE model going. 
+ - [x] Iterate through various surface temperatures and calculate the ECS for each one.
+ - [ ] Calculate decomposition into $F_2x$ and $lambda_eff$ terms.
  
  - [ ] Use RRTMG for a simple spectral decomposition of the OLR changes. Do we see the `H20 windows` and `C02 radiator fins`??
 
