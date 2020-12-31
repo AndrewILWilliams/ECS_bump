@@ -30,6 +30,8 @@ To add this environment to you `jupyter lab` instance, you must first activate t
 
 ### Acknowledgements:
 
+Thanks to Brian Rose for creating `climlab`, which allows for a convenient Python interface to RRTMG, and also a suite of exciting options for open-source climate modelling!
+
 ### References:
 
 1) Seeley, J. T., & Jeevanjee, N. (2020). H2O windows and CO2 radiator fins: a clear‐sky explanation for the peak in ECS. Geophysical Research Letters, 47, e2020GL089609. https://doi.org/10.1029/2020GL089609
