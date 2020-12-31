@@ -1,4 +1,4 @@
-# <div align="center"> RCE_Bump </div>
+# <div align="center"> ECS_Bump </div>
 Repo to reproduce the results of Meraner et al. (2013) and Seeley and Jeevanjee (2020) with RRTMG and PyRADS
 
 
@@ -13,7 +13,7 @@ Other Contributors: ()
 
 ### To-do
 
- - [x] Go through a couple of the `climlab` tutorials and get a simple RCE model going. 
+ - [x] Go through a couple of the `climlab` tutorials and get a simple SCM model going. 
  - [x] Iterate through various surface temperatures and calculate the ECS for each one.
  - [ ] Calculate decomposition into $F_2x$ and $lambda_eff$ terms.
  
