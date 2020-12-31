@@ -30,9 +30,9 @@ To add this environment to you `jupyter lab` instance, you must first activate t
 
 ### Acknowledgements:
 
-Thanks to Brian Rose for creating  [https://climlab.readthedocs.io/][climlab], which allows for a convenient Python interface to RRTMG, and also a suite of exciting options for open-source climate modelling!
+Thanks to Brian Rose for creating  [climlab](https://climlab.readthedocs.io/), which allows for a convenient Python interface to RRTMG, and also a suite of exciting options for open-source climate modelling!
 
-Also thanks to Daniel Koll for creating and maintaining [https://github.com/ddbkoll/PyRADS/][PyRADS], which is the line-by-line code I use here and which also has an intuitive Python API. :)
+Also thanks to Daniel Koll for creating and maintaining [PyRADS](https://github.com/ddbkoll/PyRADS/), which is the line-by-line code I use here and which also has an intuitive Python API. :)
 
 
 ### References:
