@@ -8,6 +8,11 @@ Created/Mantained By: Andrew Williams (andrew.williams@physics.ox.ac.uk)
   <img src="ECS_decomp_fig.png" width="5000" />
 </p>
 
+<p align="center">
+  <img src="high_low_co2_spectral_decomp.png" width="5000" />
+</p>
+
+
 > Abstract: 
 
 ### To-do
