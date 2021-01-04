@@ -3,10 +3,9 @@ Repo to reproduce the results of Meraner et al. (2013) and Seeley and Jeevanjee 
 
 
 Created/Mantained By: Andrew Williams (andrew.williams@physics.ox.ac.uk)
-Other Contributors: ()
 
 <p align="center">
-  <img src="ECS_decomp_fig.png" width="2000" />
+  <img src="ECS_decomp_fig.png" width="5000" />
 </p>
 
 > Abstract: 
