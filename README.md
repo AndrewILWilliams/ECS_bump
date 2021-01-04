@@ -6,7 +6,7 @@ Created/Mantained By: Andrew Williams (andrew.williams@physics.ox.ac.uk)
 Other Contributors: ()
 
 <p align="center">
-  <img src="ECS_decomp_fig.png" width="900" />
+  <img src="ECS_decomp_fig.png" width="2000" />
 </p>
 
 > Abstract: 
