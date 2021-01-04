@@ -19,11 +19,12 @@ Created/Mantained By: Andrew Williams (andrew.williams@physics.ox.ac.uk)
 
  - [x] Go through a couple of the `climlab` tutorials and get a simple SCM model going. 
  - [x] Iterate through various surface temperatures and calculate the ECS for each one.
- - [ ] Calculate decomposition into $F_2x$ and $lambda_eff$ terms.
+ - [x] Calculate decomposition into $F_2x$ and $lambda_eff$ terms.
  
- - [ ] Qu: Can RRTMG give the spectrally resolved OLR? Like, averaged in its 14 LW bands? That would be cool
+ - [x] Qu: Can climlab's RRTMG interface give the spectrally resolved OLR? Like, averaged in its 14 LW bands? That would be cool
+  - Edit: Not really, it'd be a bit of work I think - not worth it for now.
  
- - [ ] Use RRTMG for a simple spectral decomposition of the OLR changes. Do we see the `H20 windows` and `C02 radiator fins`??
+ - [x] Use RRTMG for a simple spectral decomposition of the OLR changes. Do we see the `H20 windows` and `C02 radiator fins`??
 
 ### Installation
 
