@@ -24,6 +24,7 @@ Created/Mantained By: Andrew Williams (andrew.williams@physics.ox.ac.uk)
  - [x] Qu: Can climlab's RRTMG interface give the spectrally resolved OLR? Like, averaged in its 16 LW bands? That would be cool
   - Edit: Not really, it'd be a bit of work I think - not worth it for now.
   - EDIT: See [this `climlab` issue I raised](https://github.com/brian-rose/climlab/issues/137), hopefully it should result in a PR which allows access to the underlying RRTMG_LW fluxes through `climlab`! :) 
+  - EDIT: [PR](https://github.com/brian-rose/climlab/pull/138) submitted! 
  
  - [x] Use PyRADS for a simple spectral decomposition of the OLR changes. Do we see the `H20 windows` and `C02 radiator fins`??
 
