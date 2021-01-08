@@ -1,5 +1,5 @@
 # <div align="center"> ECS_Bump </div>
-Repo to reproduce the results of Meraner et al. (2013) and Seeley and Jeevanjee (2020) with RRTMG and PyRADS
+Repo to reproduce the results of Meraner et al. (2013) and Seeley and Jeevanjee (2020) with `climlab` and `PyRADS`
 
 
 Created/Mantained By: Andrew Williams (andrew.williams@physics.ox.ac.uk)
