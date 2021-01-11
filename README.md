@@ -34,6 +34,9 @@ An `environment.txt` file is provided from which you can generate an `rce_bump` 
 
 To add this environment to you `jupyter lab` instance, you must first activate this environment and then run `ipython kernel install --user --name=rce_bump`.
 
+#### PyRADS
+
+To run the sections involving `PyRADS`, you should follow the installation instructions on the [github repo](https://github.com/ddbkoll/PyRADS/), then set the `os.chdir()` command in the notebook to wherever you've cloned `PyRADS`.
 
 ### Acknowledgements:
 
