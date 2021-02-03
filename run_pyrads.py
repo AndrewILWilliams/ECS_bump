@@ -135,6 +135,7 @@ j=0
 while imbalance>0.2:
 
     if j==0:
+        co2_trial = CO2_init
         print('Initial: ', 'SST=',int(temp), ', CO2=',int(co2_trial), ', TOA imbalance=',imbalance,' W/m2')
         amplification = 1
         j=1
@@ -144,6 +145,7 @@ while imbalance>0.2:
 
     if co2_trial<0:
         co2_trial=0
+        print("CO2 went below 0 ppmv...")
 
     olr, _, _ = calc_olr_pyrads(SST=temp,CO2ppmv=co2_trial)
 
