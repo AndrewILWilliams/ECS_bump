@@ -16,6 +16,9 @@ __pycache__/
 # MTCKD temp folders from pyrads
 tmp_mtckd*
 
+# Numpy files (temporary)
+*.npy
+
 # Distribution / packaging
 .Python
 build/

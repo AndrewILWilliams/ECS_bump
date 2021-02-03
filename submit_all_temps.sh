@@ -10,8 +10,11 @@ for temp in "${TEMPS[@]}"; do
     cd /gws/nopw/j04/aopp/andreww/side_projects/ECS_bump
     echo $temp
     cp submit_pyrads_run.sbatch ./log/submit_pyrads_${temp}K.sbatch
+    
+    rm ./log/run_${temp}K.*
 
     ## Replace lines in the submission scripts appropriately
+    sed -i "3 s+.*+#SBATCH --job-name=${temp}K_run +g" ./log/submit_pyrads_${temp}K.sbatch
     sed -i "4 s+.*+#SBATCH -o ./log/run_${temp}K.out +g" ./log/submit_pyrads_${temp}K.sbatch
     sed -i "5 s+.*+#SBATCH -e ./log/run_${temp}K.err +g" ./log/submit_pyrads_${temp}K.sbatch
 

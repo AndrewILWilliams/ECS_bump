@@ -132,10 +132,10 @@ imbalance = np.round(np.abs(olr-OLR0),3)
 
 print(f"Running loop for T={temp}K, with initial CO2 guess={CO2_init}ppmv.")
 j=0
+co2_trial = CO2_init
 while imbalance>0.2:
 
     if j==0:
-        co2_trial = CO2_init
         print('Initial: ', 'SST=',int(temp), ', CO2=',int(co2_trial), ', TOA imbalance=',imbalance,' W/m2')
         amplification = 1
         j=1
