@@ -10,6 +10,12 @@ __pycache__/
 *.err
 *.out
 
+# Temperature dep sbatch files
+*K.sbatch
+
+# MTCKD temp folders from pyrads
+tmp_mtckd*
+
 # Distribution / packaging
 .Python
 build/

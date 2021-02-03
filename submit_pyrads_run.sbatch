@@ -7,6 +7,4 @@
 
 conda activate ecsbump
 
-echo pwd
-
-python run_pyrads.py --temp=280
+python /gws/nopw/j04/aopp/andreww/side_projects/ECS_bump/run_pyrads.py --temp=281
