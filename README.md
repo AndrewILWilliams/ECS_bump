@@ -30,13 +30,15 @@ Created/Mantained By: Andrew Williams (andrew.williams@physics.ox.ac.uk)
 
 ### Installation
 
-An `environment.txt` file is provided from which you can generate an `rce_bump` environment with the command `conda create --name rce_bump --file environment.txt`. 
+An `environment.yml` file is provided from which you can generate an `ecsbump` environment with the command `conda env create --file environment.yml`. 
 
-To add this environment to you `jupyter lab` instance, you must first activate this environment and then run `ipython kernel install --user --name=rce_bump`.
+To add this environment to you `jupyter lab` instance, you must first activate this environment and then run `ipython kernel install --user --name=ecsbump`.
 
 #### PyRADS
 
 To run the sections involving `PyRADS`, you should follow the installation instructions on the [github repo](https://github.com/ddbkoll/PyRADS/), then set the `os.chdir()` command in the notebook to wherever you've cloned `PyRADS`.
+
+Also, you can directly clone my `PyRADS` fork and use the `ecsbump` branch, which comes with a setup.py file and the changes to `OpticalThickness.py` described in the main notebook.
 
 ### Acknowledgements:
 
