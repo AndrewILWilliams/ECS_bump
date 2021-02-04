@@ -150,6 +150,11 @@ while imbalance>0.2:
     olr, _, _ = calc_olr_pyrads(SST=temp,CO2ppmv=co2_trial)
 
     imbalance = np.round(np.abs(olr-OLR0),3)
+    
+    # Save intermediate data so can restart from this later 
+    # if necessary, due to timeouts
+    tmp_outp = np.array([int(co2_trial), imbalance])
+    np.save(f"./Data/PyRADS/tmp_{temp}K", tmp)
 
 print('Final:   ', 'SST=',int(temp), ', CO2=',int(co2_trial), ', TOA imbalance=',imbalance,' W/m2')
 CO2_outp = np.array([int(co2_trial)])
