@@ -126,6 +126,12 @@ OLR0 = calc_olr_pyrads(SST=288,CO2ppmv=280)[0]
 # Take from the rrtmg_lw run
 CO2_init = xr.open_dataarray("./Data/C_Ts_curve_RRTMG.nc").sel(Ts=temp).values
 
+# Alternatively, if restart file exists for this temperature, use that
+import os.path
+
+if os.path.isfile(f"./Data/PyRADS/tmp_{temp}K.npy"):
+    CO2_init = np.load(f"./Data/PyRADS/tmp_{temp}K.npy")[0]
+
 olr = calc_olr_pyrads(SST=temp,CO2ppmv=CO2_init)[0]
 
 imbalance = np.round(np.abs(olr-OLR0),3)
@@ -154,7 +160,7 @@ while imbalance>0.2:
     # Save intermediate data so can restart from this later 
     # if necessary, due to timeouts
     tmp_outp = np.array([int(co2_trial), imbalance])
-    np.save(f"./Data/PyRADS/tmp_{temp}K", tmp)
+    np.save(f"./Data/PyRADS/tmp_{temp}K", tmp_outp)
 
 print('Final:   ', 'SST=',int(temp), ', CO2=',int(co2_trial), ', TOA imbalance=',imbalance,' W/m2')
 CO2_outp = np.array([int(co2_trial)])
