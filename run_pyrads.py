@@ -155,7 +155,8 @@ while imbalance>0.2:
 
     olr, _, _ = calc_olr_pyrads(SST=temp,CO2ppmv=co2_trial)
 
-    imbalance = np.round(np.abs(olr-OLR0),3)
+    imbalance = np.round(olr-OLR0,3)
+    print(f"CO2_init={CO2_init}, currently={co2_trial}. Initial={imbalance} W/m2.")
     
     # Save intermediate data so can restart from this later 
     # if necessary, due to timeouts
