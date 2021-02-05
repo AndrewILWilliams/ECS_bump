@@ -134,12 +134,12 @@ if os.path.isfile(f"./Data/PyRADS/tmp_{temp}K.npy"):
 
 olr = calc_olr_pyrads(SST=temp,CO2ppmv=CO2_init)[0]
 
-imbalance = np.round(np.abs(olr-OLR0),3)
+imbalance = np.round(olr-OLR0,3)
 
 print(f"Running loop for T={temp}K, with initial CO2 guess={CO2_init}ppmv.")
 j=0
 co2_trial = CO2_init
-while imbalance>0.2:
+while np.abs(imbalance)>0.2:
 
     if j==0:
         print('Initial: ', 'SST=',int(temp), ', CO2=',int(co2_trial), ', TOA imbalance=',imbalance,' W/m2')
