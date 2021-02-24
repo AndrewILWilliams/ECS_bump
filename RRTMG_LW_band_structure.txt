@@ -1,0 +1,34 @@
+Band number | Wavenumber limits (cm-1) | Absorbers (below tropopause) | Absorbers (above tropopause)
+------------|--------------------------|----Major-----|----Minor------|----Major-----|----Minor------|
+            |                          |              |               |              |               |
+     1      |        10-350            |     h2o      |     n2        |      h2o     |     n2        |
+     
+     2      |       350-500            |     h2o      |               |      h2o     |               |
+     
+     3      |       500-630            |    h2o,co2   |     n2o       |    h2o,co2   |     n2o       |
+     
+     4      |       630-700            |    h2o,co2   |               |    h2o,co2   |               |
+     
+     5      |       700-820            |    h2o,co2   |   o3, ccl4    |    o3,co2    |               |
+       
+     6      |       820-980            |     h2o      |     co2       |              |  cfc11, cfc12 |
+     
+     7      |       980-1080           |    h2o,o3    |     co2       |      o3      |      co2      |
+     
+     8      |      1080-1180           |     h2o      |   co2,o3,n2o  |      o3      |   co2, n2o    |
+     
+     9      |      1180-1390           |    h2o,ch4   |      n2o      |     ch4      |      n2o      |
+     
+     10     |      1390-1480           |     h2o      |               |     h2o      |               |
+     
+     11     |      1480-1800           |     h2o      |       o2      |     h2o      |       o2      |
+     
+     12     |      1800-2080           |    h2o,co2   |               |              |               |
+      
+     13     |      2080-2250           |    h2o,n2o   |               |              |       o3      |
+      
+     14     |      2250-2380           |     co2      |               |      co2     |               |
+     
+     15     |      2380-2600           |    n2o,co2   |       n2      |              |               |
+     
+     16     |      2600-3250           |    h2o,ch4   |               |      ch4     |               |
