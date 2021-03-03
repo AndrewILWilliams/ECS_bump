@@ -20,7 +20,7 @@ parser.add_argument(
 
 parser.add_argument(
     '--imbalance',
-    type=int,
+    type=float,
     nargs='+',
     help='Target imbalance',
     required=True
@@ -29,9 +29,9 @@ parser.add_argument(
 args = parser.parse_args()
 
 temp             = args.temp[0]
-target_imbalance = args.temp[1]
+target_imbalance = args.imbalance[0]
 
-print(temp)
+print(temp, target_imbalance)
 
 """ Functions """
 # Define functions
@@ -148,13 +148,13 @@ olr = calc_olr_pyrads(SST=temp,CO2ppmv=CO2_init)[0]
 
 imbalance = np.round(olr-OLR0,5)
 
-print(f"Running loop for T={temp}K, with initial CO2 guess={CO2_init}ppmv.")
+print(f"Running new loop for T={temp}K, with initial CO2 guess={CO2_init}ppmv.")
 j=0
 co2_trial = CO2_init
 while np.abs(imbalance)>target_imbalance:
 
     if j==0:
-        print('Initial: ', 'SST=',int(temp), ', CO2=',int(co2_trial), ', TOA imbalance=',imbalance,' W/m2')
+        print('Initial: ', 'SST=',int(temp), ', CO2=',co2_trial, ', TOA imbalance=',imbalance,' W/m2')
         amplification = 1
         j=1
 

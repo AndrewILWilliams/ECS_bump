@@ -1,8 +1,8 @@
 #!/bin/bash 
 #SBATCH --partition=short-serial 
-#SBATCH --job-name=293K_run 
-#SBATCH -o ./log/run_293K.out 
-#SBATCH -e ./log/run_293K.err 
+#SBATCH --job-name=293K_run_p01 
+#SBATCH -o ./log/run_293K_p01_imbalance.out 
+#SBATCH -e ./log/run_293K_p01_imbalance.err 
 #SBATCH --time=24:00:00
 
 conda activate ecsbump
