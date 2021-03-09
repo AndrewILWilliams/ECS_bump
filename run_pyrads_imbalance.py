@@ -135,18 +135,9 @@ OLR0 = calc_olr_pyrads(SST=288,CO2ppmv=280)[0]
 # Take from the rrtmg_lw run
 CO2_init = xr.open_dataarray("./Data/C_Ts_curve_RRTMG_p01_imbalance.nc").sel(Ts=temp).values
 
-# Alternatively, if restart file exists for this temperature, use that
-import os.path
-
-if os.path.isfile(f"./Data/PyRADS/co2_{temp}K.npy"):
-    CO2_init = np.load(f"./Data/PyRADS/co2_{temp}K.npy")[0]
-
-elif os.path.isfile(f"./Data/PyRADS/tmp_{temp}K.npy"):
-    CO2_init = np.load(f"./Data/PyRADS/tmp_{temp}K.npy")[0]
-
 olr = calc_olr_pyrads(SST=temp,CO2ppmv=CO2_init)[0]
 
-imbalance = np.round(olr-OLR0,5)
+imbalance = (olr-OLR0)*1
 
 print(f"Running new loop for T={temp}K, with initial CO2 guess={CO2_init}ppmv.")
 j=0
@@ -155,20 +146,16 @@ while np.abs(imbalance)>target_imbalance:
 
     if j==0:
         print('Initial: ', 'SST=',int(temp), ', CO2=',co2_trial, ', TOA imbalance=',imbalance,' W/m2')
-        amplification = 1
         j=1
-
-    dG = (np.sign(imbalance))*0.1
-    co2_trial+=dG 
-    co2_trial = np.round(co2_trial, 2)
     
-    if co2_trial<0:
-        co2_trial=0
-        print("CO2 went below 0 ppmv...")
+    
+    F2x = 5 # W/m2
+    co2_trial = co2_trial * np.power(2, (olr-OLR0)/F2x)
 
     olr, _, _ = calc_olr_pyrads(SST=temp,CO2ppmv=co2_trial)
 
-    imbalance = np.round(olr-OLR0,5)
+    imbalance = (olr-OLR0)*1
+    
     print(f"CO2_init={CO2_init}, currently={co2_trial}. Initial={imbalance} W/m2.")
     
     # Save intermediate data so can restart from this later 
@@ -179,5 +166,4 @@ while np.abs(imbalance)>target_imbalance:
 print('Final:   ', 'SST=',int(temp), ', CO2=',co2_trial, ', TOA imbalance=',imbalance,' W/m2')
 CO2_outp = np.array([co2_trial])
 
-np.save(f"./Data/PyRADS/co2_{temp}K_p01_imbalance", CO2_outp)
-
+np.save(f"./Data/PyRADS/co2_{temp}K", CO2_outp)
