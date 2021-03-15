@@ -1,8 +1,8 @@
 #!/bin/bash 
 #SBATCH --partition=short-serial 
-#SBATCH --job-name=pyrads_run
-#SBATCH -o ../log/%j.out 
-#SBATCH -e ../log/%j.err
+#SBATCH --job-name=282K_run_p01 
+#SBATCH -o ./log/run_282K_p01_imbalance.out 
+#SBATCH -e ./log/%j.err
 #SBATCH --time=24:00:00
 
 conda activate ecsbump
