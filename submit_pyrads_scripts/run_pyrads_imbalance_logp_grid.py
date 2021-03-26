@@ -49,7 +49,7 @@ def generate_idealized_temp_profile(SST, Tstrat, plevs):
 
 
 """ PyRADS setup """
-def calc_olr_pyrads(SST, CO2ppmv, Tstrat=200, dnu=0.1, nu_min=0.1, nu_max=3500, npres=300):
+def calc_olr_pyrads(SST, CO2ppmv, Tstrat=200, dnu=0.01, nu_min=0.1, nu_max=3500, npres=1000):
     from scipy.integrate import trapz,simps,cumtrapz
 
     class Dummy:
@@ -99,6 +99,7 @@ def calc_olr_pyrads(SST, CO2ppmv, Tstrat=200, dnu=0.1, nu_min=0.1, nu_max=3500, 
     g.tau, g.tau_h2o, g.tau_co2 = pyrads.OpticalThickness.compute_tau_H2ON2_CO2dilute(g.p, g.T, g.q, 
                                                                                       CO2ppmv/1e6, g, 
                                                                                       params_pyrads, RH=params_pyrads.RH)
+    
     # compute Planck functions etc:
     T_2D = np.transpose(np.tile( g.T, (g.Nn,1) )) # shape=(g.p,g.n)
     g.B_surf = np.pi* pyrads.Planck.Planck_n( g.n, SST ) # shape=(g.n)
@@ -107,7 +108,7 @@ def calc_olr_pyrads(SST, CO2ppmv, Tstrat=200, dnu=0.1, nu_min=0.1, nu_max=3500, 
     olr_spec = pyrads.Get_Fluxes.Fplus_alternative(0,g) # (spectrally resolved=irradiance)
     olr = simps(olr_spec,g.n)
     
-    return olr, olr_spec, g
+    return olr, olr_spec #, g
 
 
 """ Main loop """
@@ -120,7 +121,6 @@ olr = calc_olr_pyrads(SST=temp,CO2ppmv=CO2_init)[0]
 
 imbalance = (olr-OLR0)*1
 
-print(f"Running new loop for T={temp}K, with initial CO2 guess={CO2_init}ppmv.")
 j=0
 co2_trial = CO2_init
 while np.abs(imbalance)>target_imbalance:
@@ -129,22 +129,22 @@ while np.abs(imbalance)>target_imbalance:
         print('Initial: ', 'SST=',int(temp), ', CO2=',co2_trial, ', TOA imbalance=',imbalance,' W/m2')
         j=1
     
-    
     F2x = 5 # W/m2
     co2_trial = co2_trial * np.power(2, (olr-OLR0)/F2x)
 
-    olr, _, _ = calc_olr_pyrads(SST=temp,CO2ppmv=co2_trial)
-
+    olr, olr_spec = calc_olr_pyrads(SST=temp,CO2ppmv=co2_trial)
+    
     imbalance = (olr-OLR0)*1
     
     print(f"CO2_init={CO2_init}, currently={co2_trial}. Initial={imbalance} W/m2.")
-    
-    # Save intermediate data so can restart from this later 
-    # if necessary, due to timeouts
-    #tmp_outp = np.array([co2_trial, imbalance])
-    #np.save(f"./Data/PyRADS/tmp_{temp}K", tmp_outp)
 
 print('Final:   ', 'SST=',int(temp), ', CO2=',co2_trial, ', TOA imbalance=',imbalance,' W/m2')
 CO2_outp = np.array([co2_trial])
 
-np.save(f"../Data/PyRADS/co2_{temp}K_300_logplevs_CO2_continuum", CO2_outp)
+np.save(f"../Data/PyRADS/co2_{temp}K_1000_logplevs_p01dnu", CO2_outp)
+
+print("Calculating lambda...")
+olrp1, olr_specp1 = calc_olr_pyrads(SST=temp+1,CO2ppmv=co2_trial)
+
+lambda_spec = (olr_specp1-olr_spec)*1
+np.save(f"../Data/PyRADS/lambdanu_{temp}K_1000_logplevs_p01dnu", lambda_spec)

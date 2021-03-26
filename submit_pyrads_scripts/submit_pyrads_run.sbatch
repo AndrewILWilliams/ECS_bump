@@ -1,9 +1,10 @@
 #!/bin/bash 
-#SBATCH --partition=short-serial 
+#SBATCH --partition=high-mem 
 #SBATCH --job-name=pyrads_run
 #SBATCH -o ../log/%j.out 
 #SBATCH -e ../log/%j.err
-#SBATCH --time=24:00:00
+#SBATCH --time=48:00:00
+#SBATCH --mem=128000
 
 conda activate ecsbump
 
